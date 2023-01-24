@@ -1,0 +1,8 @@
+app/data.php
+
+node_modules
+src/styles/*.map
+vendor
+.env
+composer.lock
+package-lock.json
