@@ -10591,6 +10591,10 @@ body {
   color: #ECECEC;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
@@ -10614,7 +10618,29 @@ body {
 }
 .section .section-title {
   font-family: "PT Mono", monospace;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
+}
+.section .section-title.typing {
+  position: relative;
+}
+.section .section-title.typing::after {
+  content: "";
+  background-color: #ECECEC;
+  display: inline-block;
+  width: 0.1rem;
+  height: 1.5rem;
+  opacity: 0;
+  transform: translateY(20%);
+  animation-name: typingAnimation;
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+@keyframes typingAnimation {
+  50% {
+    opacity: 1;
+  }
 }
 
 .section-top {
@@ -10636,17 +10662,158 @@ body {
   margin-right: 0.25rem;
 }
 .section-top .header .nav .nav-item .nav-link:hover {
-  color: #B77A20;
+  opacity: 0.8;
   transition: all 0.2s ease-in-out;
 }
 .section-top .banner {
   display: flex;
   align-items: center;
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .section-top .banner .banner-desc {
+  font-size: 1.1rem;
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+}
+
+.section-skills,
+.section-portfolio {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 3.25rem 0;
+}
+
+.section-skills {
+  background-image: url(./../../assets/img/skills-bg.png);
+}
+.section-skills .skill-box {
+  background-color: transparent;
+  border-bottom: 0.313rem solid rgba(183, 122, 32, 0.25);
+  border-radius: 0 0 0.125rem 0.125rem;
+  padding: 1.5rem 2rem;
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+}
+.section-skills .skill-box .skill-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #B77A20;
+  color: #ECECEC;
+  width: 3.75rem;
+  height: 3.75rem;
+  margin: 0 auto;
+}
+.section-skills .skill-box .skill-icon-box .icon {
+  font-size: 1.8rem;
+}
+.section-skills .skill-box .skill-content {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.section-skills .skill-box .skill-content .skill-title {
   font-size: 1.25rem;
   font-weight: 500;
+}
+.section-skills .skill-box .skill-content .skill-desc {
+  font-size: 0.875rem;
+  margin: 0;
+}
+.section-skills .skill-box:hover {
+  border-bottom-color: #b77a20;
+  transition: all 0.2s ease-in-out;
+}
+
+.section-portfolio {
+  background-image: url(./../../assets/img/portfolio-bg.png);
+}
+.section-portfolio .job-box {
+  background-color: transparent;
+  border-bottom: 0.313rem solid rgba(183, 122, 32, 0);
+  border-radius: 0 0 0.125rem 0.125rem;
+  padding: 1.5rem 0;
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+}
+.section-portfolio .job-box .job-image-box {
+  position: relative;
+  overflow: hidden;
+}
+.section-portfolio .job-box .job-image-box img {
+  transition: all 0.2s ease-in-out;
+  opacity: 0.75;
+}
+.section-portfolio .job-box .job-image-box .job-links {
+  background: rgba(236, 236, 236, 0.8);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  transform: translateY(100%);
+  animation: hideJobLinksAnimation 0.125s ease-out 1 both;
+  border-top: 5px solid #B77A20;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.125);
+  border-radius: 2px 2px 0px 0px;
+}
+.section-portfolio .job-box .job-image-box .job-links a {
+  display: inline-block;
+  color: #B77A20;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.section-portfolio .job-box .job-image-box .job-links a:hover {
+  opacity: 0.75;
+  transition: all 0.2s ease-in-out;
+}
+.section-portfolio .job-box .job-content {
+  padding-top: 1.5rem;
+}
+.section-portfolio .job-box .job-content .job-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.section-portfolio .job-box .job-content .job-desc {
+  font-size: 0.875rem;
+  margin: 0;
+}
+.section-portfolio .job-box:hover {
+  border-bottom-color: #b77a20;
+  transition: all 0.2s ease-in-out;
+}
+.section-portfolio .job-box:hover .job-image-box img {
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+.section-portfolio .job-box:hover .job-image-box .job-links {
+  animation: showJobLinksAnimation 0.25s ease-in 1 both;
+}
+@keyframes showJobLinksAnimation {
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes hideJobLinksAnimation {
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (min-width: 576px) {
+  .section .section-title {
+    font-size: 2.5rem;
+  }
+  .section .section-title.typing::after {
+    width: 0.2rem;
+    height: 2rem;
+    transform: translateY(10%);
+  }
+  .section-top .banner .banner-desc {
+    font-size: 1.25rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

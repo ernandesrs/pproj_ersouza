@@ -6,6 +6,10 @@ body {
     color: $light-light;
 }
 
+a {
+    text-decoration: none;
+}
+
 .btn {
     text-transform: uppercase;
     transition: $transition-base;
@@ -33,7 +37,33 @@ body {
 
     .section-title {
         font-family: 'PT Mono', monospace;
-        font-size: 2.5rem;
+        font-size: 1.75rem;
+
+        &.typing {
+            position: relative;
+
+            &::after {
+                content: '';
+                background-color: $light-light;
+                display: inline-block;
+                width: .1rem;
+                height: 1.5rem;
+                opacity: 0;
+                transform: translateY(20%);
+
+                animation-name: typingAnimation;
+                animation-duration: .75s;
+                animation-iteration-count: infinite;
+                animation-fill-mode: both;
+                animation-timing-function: ease-in-out;
+            }
+
+            @keyframes typingAnimation {
+                50% {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
 
@@ -62,7 +92,7 @@ body {
                     }
 
                     &:hover {
-                        color: $primary;
+                        opacity: .8;
                         transition: $transition-base;
                     }
                 }
@@ -73,11 +103,162 @@ body {
     .banner {
         display: flex;
         align-items: center;
-        height: calc(100vh - $header-height);
+        min-height: calc(100vh - $header-height);
+        padding-top: $spacer * 2.5;
+        padding-bottom: $spacer * 2.5;
 
         .banner-desc {
-            font-size: 1.25rem;
-            font-weight: 500;
+            font-size: 1.1rem;
+            font-weight: 500 !important;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.section-skills,
+.section-portfolio {
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: $spacer * 3.25 0;
+}
+
+.section-skills {
+    background-image: url(./../../assets/img/skills-bg.png);
+
+    .skill-box {
+        background-color: transparent;
+        border-bottom: 0.313rem solid rgb($primary, .25);
+        border-radius: 0 0 0.125rem 0.125rem;
+        padding: $spacer * 1.5 $spacer * 2;
+        transition: $transition-base;
+        cursor: default;
+
+        .skill-icon-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $primary;
+            color: $light-light;
+            width: 3.75rem;
+            height: 3.75rem;
+            margin: 0 auto;
+
+            .icon {
+                font-size: 1.8rem;
+            }
+        }
+
+        .skill-content {
+            padding: $spacer * 1.5 0;
+            text-align: center;
+
+            .skill-title {
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+
+            .skill-desc {
+                font-size: 0.875rem;
+                margin: 0;
+            }
+        }
+
+        &:hover {
+            border-bottom-color: rgb($primary, 1);
+            transition: $transition-base;
+        }
+    }
+}
+
+.section-portfolio {
+    background-image: url(./../../assets/img/portfolio-bg.png);
+
+    .job-box {
+        background-color: transparent;
+        border-bottom: 0.313rem solid rgb($primary, 0);
+        border-radius: 0 0 0.125rem 0.125rem;
+        padding: $spacer * 1.5 0;
+        transition: $transition-base;
+        cursor: default;
+
+        .job-image-box {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                transition: $transition-base;
+                opacity: 0.75;
+            }
+
+            .job-links {
+                background: rgb($light-light, .8);
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                text-align: center;
+                transform: translateY(100%);
+                animation: hideJobLinksAnimation .125s ease-out 1 both;
+
+                border-top: 5px solid $primary;
+                box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.125);
+                border-radius: 2px 2px 0px 0px;
+
+                a {
+                    display: inline-block;
+                    color: $primary;
+                    padding: $spacer / 4 $spacer / 2;
+                    transition: $transition-base;
+
+                    &:hover {
+                        opacity: .75;
+                        transition: $transition-base;
+                    }
+                }
+            }
+        }
+
+        .job-content {
+            padding-top: $spacer * 1.5;
+
+            .job-title {
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+
+            .job-desc {
+                font-size: 0.875rem;
+                margin: 0;
+            }
+        }
+
+        &:hover {
+            border-bottom-color: rgb($primary, 1);
+            transition: $transition-base;
+
+            .job-image-box {
+                img {
+                    transition: $transition-base;
+                    opacity: 1;
+                }
+
+                .job-links {
+                    animation: showJobLinksAnimation .25s ease-in 1 both;
+                }
+
+                @keyframes showJobLinksAnimation {
+                    100% {
+                        transform: translateY(0%);
+                    }
+                }
+
+                @keyframes hideJobLinksAnimation {
+                    100% {
+                        transform: translateY(100%);
+                    }
+                }
+            }
         }
     }
 }
