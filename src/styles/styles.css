@@ -10589,6 +10589,7 @@ body {
   min-height: 100vh;
   font-family: "Nunito", sans-serif;
   color: #ECECEC;
+  overflow-x: hidden;
 }
 
 a {
@@ -10670,6 +10671,33 @@ a:hover {
 }
 .section-top .header .logo img {
   max-width: 8.25rem;
+}
+.section-top .header .nav {
+  display: none;
+}
+.section-top .header .nav.mobile {
+  background-color: #2E2D2D;
+  width: 100%;
+  height: calc(100vh - 75px);
+  flex-direction: column;
+  position: absolute;
+  top: 75px;
+  right: 0;
+  padding: 1rem 2rem;
+  background-color: rgba(46, 45, 45, 0.95);
+  transform: translateX(100%);
+}
+.section-top .header .nav.mobile.visible {
+  display: flex;
+  animation: showNavAnimation 0.375s ease-in-out 1 both;
+}
+@keyframes showNavAnimation {
+  100% {
+    transform: translateX(0%);
+  }
+}
+.section-top .header .nav .nav-item {
+  margin-bottom: 0.5rem;
 }
 .section-top .header .nav .nav-item .nav-link {
   text-transform: uppercase;
@@ -10864,6 +10892,9 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
+  .section-top .header .nav {
+    display: flex;
+  }
   .section-top .banner {
     min-height: calc(100vh - 75px);
     transform: translateY(75px);

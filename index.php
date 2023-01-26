@@ -32,7 +32,7 @@ require __DIR__ . "/app/config.php";
                             alt="ERSOUZA LOGO">
                     </a>
 
-                    <ul class="ms-auto nav flex-row d-none d-lg-flex">
+                    <ul class="ms-auto nav">
                         <?php foreach (CONF_APP_DATA["header"]["nav"] ?? [] as $nav): ?>
                             <li class="nav-item">
                                 <a href="<?= $nav["url"] ?>"
