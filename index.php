@@ -101,7 +101,7 @@ require __DIR__ . "/app/config.php";
 
                     <div class="row justify-content-center">
                         <?php foreach (CONF_APP_DATA["skills"]["skills"] as $skill): ?>
-                            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                            <div class="col-10 col-sm-6 col-lg-4 mb-4">
                                 <div class="card card-body h-100 skill-box">
                                     <div class="skill-icon-box">
                                         <i class="icon <?= $skill["icon"] ?>"></i>
@@ -140,7 +140,7 @@ require __DIR__ . "/app/config.php";
 
                     <div class="row justify-content-center">
                         <?php foreach (CONF_APP_DATA["portfolio"]["jobs"] as $job): ?>
-                            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                            <div class="col-10 col-sm-6 col-lg-4 mb-3">
                                 <div class="card card-body h-100 job-box">
                                     <div class="job-image-box">
                                         <img class="img-fluid" src="<?= $job["image"] ?>"
@@ -148,14 +148,14 @@ require __DIR__ . "/app/config.php";
 
                                         <div class="py-2 job-links">
                                             <?php if ($url = $job["preview_url"]): ?>
-                                                <a href="<?= $url ?>" title="Previsualizar"
+                                                <a class="btn btn-sm btn-primary-light" href="<?= $url ?>" title="Previsualizar"
                                                     target="_blank">
                                                     <i class="bi bi-eye-fill"></i>
                                                     <span class="text">Preview</span>
                                                 </a>
                                             <?php endif; ?>
                                             <?php if ($url = $job["source_url"]): ?>
-                                                <a href="<?= $url ?>" title="Código fonte"
+                                                <a class="btn btn-sm btn-primary-light" href="<?= $url ?>" title="Código fonte"
                                                     target="_blank">
                                                     <i class="bi bi-github"></i>
                                                     <span class="text">Fonte</span>

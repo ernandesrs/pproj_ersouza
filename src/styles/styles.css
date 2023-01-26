@@ -10723,11 +10723,12 @@ a:hover {
 }
 .section-skills .skill-box .skill-content .skill-title {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .section-skills .skill-box .skill-content .skill-desc {
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin: 0;
+  line-height: 1.375rem;
 }
 .section-skills .skill-box:hover {
   border-bottom-color: #b77a20;
@@ -10754,7 +10755,6 @@ a:hover {
   opacity: 0.75;
 }
 .section-portfolio .job-box .job-image-box .job-links {
-  background: rgba(236, 236, 236, 0.95);
   width: 100%;
   position: absolute;
   left: 0;
@@ -10762,18 +10762,15 @@ a:hover {
   text-align: center;
   transform: translateY(100%);
   animation: hideJobLinksAnimation 0.125s ease-out 1 both;
-  border-top: 5px solid #B77A20;
-  box-shadow: 0px -4px 4px rgba(56, 56, 56, 0.125);
-  border-radius: 2px 2px 0px 0px;
 }
 .section-portfolio .job-box .job-image-box .job-links a {
   display: inline-block;
-  color: #B77A20;
-  padding: 0.25rem 0.5rem;
   transition: all 0.2s ease-in-out;
+  color: #ECECEC;
+  text-transform: capitalize;
 }
 .section-portfolio .job-box .job-image-box .job-links a:hover {
-  opacity: 0.75;
+  opacity: 0.85;
   transition: all 0.2s ease-in-out;
 }
 .section-portfolio .job-box .job-content {
@@ -10781,13 +10778,12 @@ a:hover {
 }
 .section-portfolio .job-box .job-content .job-title {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .section-portfolio .job-box .job-content .job-desc {
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin: 0;
-  letter-spacing: 0.05rem;
-  font-weight: 500;
+  line-height: 1.375rem;
 }
 .section-portfolio .job-box:hover {
   border-bottom-color: #b77a20;
