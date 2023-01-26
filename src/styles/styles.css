@@ -10604,6 +10604,7 @@ a:hover {
 .btn {
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 6px rgba(46, 45, 45, 0.25);
 }
 .btn .icon {
   margin-right: 0.2rem;
@@ -10611,7 +10612,6 @@ a:hover {
 .btn.btn-primary, .btn.btn-outline-primary:hover {
   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
   background: radial-gradient(100% 1776.02% at 0% 0%, #CE9034 5.62%, #B77A20 29.54%);
-  box-shadow: 2px 2px 4px rgba(183, 122, 32, 0.25);
   color: #ECECEC;
 }
 .btn:hover {
@@ -10680,8 +10680,7 @@ a:hover {
 }
 .section-top .banner .banner-desc {
   font-size: 1.1rem;
-  font-weight: 500 !important;
-  letter-spacing: 1px;
+  letter-spacing: 0.05rem;
 }
 
 .section-skills,
@@ -10768,6 +10767,7 @@ a:hover {
   transition: all 0.2s ease-in-out;
   color: #ECECEC;
   text-transform: capitalize;
+  margin: 0 0.25rem;
 }
 .section-portfolio .job-box .job-image-box .job-links a:hover {
   opacity: 0.85;

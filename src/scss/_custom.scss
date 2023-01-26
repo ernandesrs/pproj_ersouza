@@ -20,6 +20,7 @@ a {
 .btn {
     text-transform: uppercase;
     transition: $transition-base;
+    box-shadow: 2px 2px 6px rgba($dark-dark, 0.25);
 
     .icon {
         margin-right: $spacer / 5;
@@ -29,7 +30,6 @@ a {
     &.btn-outline-primary:hover {
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
         background: radial-gradient(100% 1776.02% at 0% 0%, $primary-light 5.62%, $primary 29.54%);
-        box-shadow: 2px 2px 4px rgba($primary, 0.25);
         color: $light-light;
     }
 
@@ -116,8 +116,7 @@ a {
 
         .banner-desc {
             font-size: 1.1rem;
-            font-weight: 500 !important;
-            letter-spacing: 1px;
+            letter-spacing: 0.05rem;
         }
     }
 }
@@ -214,6 +213,7 @@ a {
                     transition: $transition-base;
                     color: $light-light;
                     text-transform: capitalize;
+                    margin: 0 $spacer / 4;
 
                     &:hover {
                         opacity: .85;
