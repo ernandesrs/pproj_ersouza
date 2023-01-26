@@ -10621,6 +10621,7 @@ a:hover {
 
 .section {
   min-height: 100vh;
+  position: relative;
 }
 .section .section-title {
   font-family: "PT Mono", monospace;
@@ -10654,7 +10655,15 @@ a:hover {
   background-size: cover;
 }
 .section-top .header {
+  width: 100%;
   height: 75px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.section-top .header.fill-background {
+  background-color: rgba(46, 45, 45, 0.95);
 }
 .section-top .header .logo img {
   max-width: 8.25rem;
@@ -10677,6 +10686,9 @@ a:hover {
   min-height: calc(100vh - 75px);
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+  transform: translateY(75px);
+  position: relative;
+  z-index: 0;
 }
 .section-top .banner .banner-desc {
   font-size: 1.1rem;

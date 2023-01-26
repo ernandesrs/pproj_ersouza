@@ -41,6 +41,7 @@ a {
 
 .section {
     min-height: 100vh;
+    position: relative;
 
     .section-title {
         font-family: 'PT Mono', monospace;
@@ -79,7 +80,16 @@ a {
     background-size: cover;
 
     .header {
+        width: 100%;
         height: $header-height;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        &.fill-background {
+            background-color: rgb($dark-dark, 0.95);
+        }
 
         .logo {
             img {
@@ -113,6 +123,9 @@ a {
         min-height: calc(100vh - $header-height);
         padding-top: $spacer * 2.5;
         padding-bottom: $spacer * 2.5;
+        transform: translateY($header-height);
+        position: relative;
+        z-index: 0;
 
         .banner-desc {
             font-size: 1.1rem;

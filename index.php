@@ -54,30 +54,34 @@ require __DIR__ . "/app/config.php";
             </div>
         </header>
 
-        <div class="container banner">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-12 col-md-8 col-lg-6 px-5 order-lg-5 pe-lg-2">
-                    <img class="img-fluid" src="<?= CONF_APP_DATA["banner"]["image"] ?>"
-                        alt="<?= CONF_APP_DATA["banner"]["title"] ?>">
-                </div>
+        <div class="banner">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-md-8 col-lg-6 px-5 order-lg-5 pe-lg-2">
+                        <img class="img-fluid"
+                            src="<?= CONF_APP_DATA["banner"]["image"] ?>"
+                            alt="<?= CONF_APP_DATA["banner"]["title"] ?>">
+                    </div>
 
-                <div class="col-12 col-lg-6 text-center text-lg-start ps-lg-2">
-                    <h1 class="section-title typing">
-                        <?= CONF_APP_DATA["banner"]["title"] ?>
-                    </h1>
-                    <p class="py-3 banner-desc">
-                        <?= CONF_APP_DATA["banner"]["desc"] ?>
-                    </p>
-                    <div>
-                        <?php foreach (CONF_APP_DATA["banner"]["buttons"] as $button): ?>
-                            <a class="btn btn-<?=($button["contrast"] ?? false) ? "primary" : "outline-primary" ?> mx-1 mb-2"
-                                href="<?= $button["url"] ?>" title="<?= $button["title"] ?>">
-                                <i class="icon <?= $button["icon"] ?>"></i> <span
-                                    class="text">
-                                    <?= $button["text"] ?>
-                                </span>
-                            </a>
-                        <?php endforeach; ?>
+                    <div class="col-12 col-lg-6 text-center text-lg-start ps-lg-2">
+                        <h1 class="section-title typing">
+                            <?= CONF_APP_DATA["banner"]["title"] ?>
+                        </h1>
+                        <p class="py-3 banner-desc">
+                            <?= CONF_APP_DATA["banner"]["desc"] ?>
+                        </p>
+                        <div>
+                            <?php foreach (CONF_APP_DATA["banner"]["buttons"] as $button): ?>
+                                <a class="btn btn-<?=($button["contrast"] ?? false) ? "primary" : "outline-primary" ?> mx-1 mb-2"
+                                    href="<?= $button["url"] ?>"
+                                    title="<?= $button["title"] ?>">
+                                    <i class="icon <?= $button["icon"] ?>"></i> <span
+                                        class="text">
+                                        <?= $button["text"] ?>
+                                    </span>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,14 +152,16 @@ require __DIR__ . "/app/config.php";
 
                                         <div class="py-2 job-links">
                                             <?php if ($url = $job["preview_url"]): ?>
-                                                <a class="btn btn-sm btn-primary-light" href="<?= $url ?>" title="Previsualizar"
+                                                <a class="btn btn-sm btn-primary-light"
+                                                    href="<?= $url ?>" title="Previsualizar"
                                                     target="_blank">
                                                     <i class="bi bi-eye-fill"></i>
                                                     <span class="text">Preview</span>
                                                 </a>
                                             <?php endif; ?>
                                             <?php if ($url = $job["source_url"]): ?>
-                                                <a class="btn btn-sm btn-primary-light" href="<?= $url ?>" title="Código fonte"
+                                                <a class="btn btn-sm btn-primary-light"
+                                                    href="<?= $url ?>" title="Código fonte"
                                                     target="_blank">
                                                     <i class="bi bi-github"></i>
                                                     <span class="text">Fonte</span>

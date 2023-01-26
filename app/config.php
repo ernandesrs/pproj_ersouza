@@ -53,5 +53,5 @@ function copy_assets_from_source()
         __DIR__ . "/../src/scripts/scripts.js"
     ];
     $jsMinifier = new Minify\JS($js);
-    $jsMinifier->minify(__DIR__ . "/../assets/js/scripts.css");
+    $jsMinifier->minify(__DIR__ . "/../assets/js/scripts.js");
 }
