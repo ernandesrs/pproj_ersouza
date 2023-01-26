@@ -47,7 +47,7 @@ require __DIR__ . "/app/config.php";
                     </ul>
 
                     <button
-                        class="btn px-0 text-light-light fs-4 ms-auto d-lg-none bg-transparent">
+                        class="btn toggler px-0 text-light-light fs-4 ms-auto d-lg-none bg-transparent">
                         <i class="bi bi-list"></i>
                     </button>
                 </nav>
@@ -64,7 +64,7 @@ require __DIR__ . "/app/config.php";
                     </div>
 
                     <div class="col-12 col-lg-6 text-center text-lg-start ps-lg-2">
-                        <h1 class="section-title typing">
+                        <h1 class="section-title">
                             <?= CONF_APP_DATA["banner"]["title"] ?>
                         </h1>
                         <p class="py-3 banner-desc">
