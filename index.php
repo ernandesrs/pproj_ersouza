@@ -58,19 +58,20 @@ require __DIR__ . "/app/config.php";
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-12 col-md-8 col-lg-6 px-5 order-lg-5 pe-lg-2">
-                        <img class="img-fluid"
+                        <img class="img-fluid" data-aos="zoom-out" data-aos-duration="750"
                             src="<?= CONF_APP_DATA["banner"]["image"] ?>"
                             alt="<?= CONF_APP_DATA["banner"]["title"] ?>">
                     </div>
 
                     <div class="col-12 col-lg-6 text-center text-lg-start ps-lg-2">
-                        <h1 class="section-title">
+                        <h1 class="section-title" data-aos="zoom-out">
                             <?= CONF_APP_DATA["banner"]["title"] ?>
                         </h1>
-                        <p class="py-3 banner-desc">
+                        <p class="py-3 banner-desc" data-aos="zoom-out"
+                            data-aos-delay="125">
                             <?= CONF_APP_DATA["banner"]["desc"] ?>
                         </p>
-                        <div>
+                        <div data-aos="fade-up">
                             <?php foreach (CONF_APP_DATA["banner"]["buttons"] as $button): ?>
                                 <a class="btn btn-<?=($button["contrast"] ?? false) ? "primary" : "outline-primary" ?> mx-1 mb-2"
                                     href="<?= $button["url"] ?>"
@@ -104,8 +105,10 @@ require __DIR__ . "/app/config.php";
                     </div>
 
                     <div class="row justify-content-center">
-                        <?php foreach (CONF_APP_DATA["skills"]["skills"] as $skill): ?>
-                            <div class="col-10 col-sm-6 col-lg-4 mb-4">
+                        <?php foreach (CONF_APP_DATA["skills"]["skills"] as $key => $skill): ?>
+                            <div class="col-10 col-sm-6 col-lg-4 mb-4" data-aos="zoom-out-up"
+                                data-aos-delay="<?= $key * 125 ?>"
+                                data-aos-duration="<?= $key * 500 ?>">
                                 <div class="card card-body h-100 skill-box">
                                     <div class="skill-icon-box">
                                         <i class="icon <?= $skill["icon"] ?>"></i>
@@ -144,7 +147,9 @@ require __DIR__ . "/app/config.php";
 
                     <div class="row justify-content-center">
                         <?php foreach (CONF_APP_DATA["portfolio"]["jobs"] as $job): ?>
-                            <div class="col-10 col-sm-6 col-lg-4 mb-3">
+                            <div class="col-10 col-sm-6 col-lg-4 mb-3" data-aos="zoom-in-up"
+                                data-aos-delay="<?= $key * 125 ?>"
+                                data-aos-duration="<?= $key * 350 ?>">
                                 <div class="card card-body h-100 job-box">
                                     <div class="job-image-box">
                                         <img class="img-fluid" src="<?= $job["image"] ?>"
@@ -285,6 +290,9 @@ require __DIR__ . "/app/config.php";
     <!-- /footer -->
 
     <script src="<?= CONF_APP_ASSETS_URL ?>/js/scripts.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

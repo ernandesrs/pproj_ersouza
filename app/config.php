@@ -44,13 +44,15 @@ function copy_assets_from_source()
     // css
     $css = [
         __DIR__ . "/../src/styles/styles.css",
+        __DIR__ . "/../node_modules/aos/dist/aos.css",
     ];
     $cssMinifier = new Minify\CSS($css);
     $cssMinifier->minify(__DIR__ . "/../assets/css/styles.css");
 
     // JS
     $js = [
-        __DIR__ . "/../src/scripts/scripts.js"
+        __DIR__ . "/../src/scripts/scripts.js",
+        __DIR__ . "/../node_modules/aos/dist/aos.js",
     ];
     $jsMinifier = new Minify\JS($js);
     $jsMinifier->minify(__DIR__ . "/../assets/js/scripts.js");
