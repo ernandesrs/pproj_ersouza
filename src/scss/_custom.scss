@@ -8,6 +8,13 @@ body {
 
 a {
     text-decoration: none;
+    color: $primary;
+    transition: $transition-base;
+
+    &:hover {
+        color: rgb($primary-dark, .75);
+        transition: $transition-base;
+    }
 }
 
 .btn {
@@ -116,7 +123,8 @@ a {
 }
 
 .section-skills,
-.section-portfolio {
+.section-portfolio,
+.section-contact {
     background-size: cover;
     display: flex;
     align-items: center;
@@ -192,7 +200,7 @@ a {
             }
 
             .job-links {
-                background: rgb($light-light, .8);
+                background: rgb($light-light, .95);
                 width: 100%;
                 position: absolute;
                 left: 0;
@@ -202,7 +210,7 @@ a {
                 animation: hideJobLinksAnimation .125s ease-out 1 both;
 
                 border-top: 5px solid $primary;
-                box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.125);
+                box-shadow: 0px -4px 4px rgba($dark, 0.125);
                 border-radius: 2px 2px 0px 0px;
 
                 a {
@@ -230,6 +238,8 @@ a {
             .job-desc {
                 font-size: 0.875rem;
                 margin: 0;
+                letter-spacing: .05rem;
+                font-weight: 500;
             }
         }
 
@@ -241,6 +251,7 @@ a {
                 img {
                     transition: $transition-base;
                     opacity: 1;
+                    transform: scale(1.1);
                 }
 
                 .job-links {
@@ -256,6 +267,42 @@ a {
                 @keyframes hideJobLinksAnimation {
                     100% {
                         transform: translateY(100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-contact {
+    .contacts-box {
+        background-color: $dark-dark;
+        box-shadow: 0px 4px 12px -6px rgba($dark, 0.25);
+
+        .nav {
+            .nav-item {
+                .nav-link {
+                    display: flex;
+                    align-items: center;
+                    color: $primary;
+                    padding-left: 0;
+
+                    .icon {
+                        font-size: 1.375rem;
+                        margin-right: $spacer / 1.5;
+                    }
+
+                    .text {
+                        transition: $transition-base;
+                    }
+
+                    &:hover {
+                        color: $primary-dark;
+
+                        .text {
+                            padding-left: $spacer / 4;
+                            transition: $transition-base;
+                        }
                     }
                 }
             }

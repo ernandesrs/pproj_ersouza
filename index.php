@@ -86,7 +86,7 @@ require __DIR__ . "/app/config.php";
     <!-- /header/banner -->
 
     <!-- skills -->
-    <section class="section section-skills">
+    <section class="section section-skills" id="skills">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
@@ -125,7 +125,7 @@ require __DIR__ . "/app/config.php";
     <!-- /skills -->
 
     <!-- portfolio -->
-    <section class="section section-portfolio">
+    <section class="section section-portfolio" id="portfolio">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
@@ -180,6 +180,103 @@ require __DIR__ . "/app/config.php";
         </div>
     </section>
     <!-- /portfolio -->
+
+    <!-- contact -->
+    <section class="section section-contact" id="contact">
+        <div class="container">
+            <div class="row justify-content-center pb-4">
+                <div class="col-10 col-md-8 col-lg-5 text-center">
+                    <h1 class="section-title typing">
+                        <?= CONF_APP_DATA["contact"]["title"] ?>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-xl-7">
+                    <div class="card card-body contacts-box">
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-4 mb-md-0">
+                                <div class="card card-body bg-transparent">
+                                    <p class="fs-6">
+                                        Me encontre nestas redes sociais ou via e-mail.
+                                    </p>
+                                    <ul class="nav profiles flex-column">
+                                        <?php foreach (CONF_APP_DATA["contact"]["profiles"] as $profile): ?>
+                                            <li class="nav-item">
+                                                <a class="nav-link"
+                                                    href="<?= $profile["url"] ?>"
+                                                    title="<?= $profile["title"] ?>"
+                                                    target="_blank">
+                                                    <i
+                                                        class="icon <?= $profile["icon"] ?>"></i>
+                                                    <span class="text">
+                                                        <?= $profile["text"] ?>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card card-body bg-transparent">
+                                    <p class="fs-6">
+                                        Também estou nestas plataformas freelancer.
+                                    </p>
+                                    <ul class="nav freelance flex-column">
+                                        <?php foreach (CONF_APP_DATA["contact"]["freelance"] as $freelance): ?>
+                                            <li class="nav-item">
+                                                <a class="nav-link"
+                                                    href="<?= $freelance["url"] ?>"
+                                                    title="<?= $freelance["title"] ?>"
+                                                    target="_blank">
+                                                    <i
+                                                        class="icon bi bi-arrow-up-right-square-fill"></i>
+                                                    <span class="text">
+                                                        <?= $freelance["text"] ?>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /contatct -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="d-flex justify-content-center text-center py-5">
+                <small>
+                    <p class="mb-0">
+                        <a href="<?= CONF_APP_URL ?>" title="Página Inicial">ERSOUZA</a> ©
+                        <?= date("Y") ?> - Todos os direitos reservados
+                    </p>
+                    <p class="mb-0">
+                        <span>
+                            <a href="">
+                                Termos de privacidade
+                            </a>
+                        </span>
+                        <span>|</span>
+                        <span>
+                            <a href="">
+                                Termos de uso
+                            </a>
+                        </span>
+                    </p>
+                </small>
+            </div>
+        </div>
+    </footer>
+    <!-- /footer -->
 
     <script src="<?= CONF_APP_ASSETS_URL ?>/js/scripts.js"></script>
 </body>
