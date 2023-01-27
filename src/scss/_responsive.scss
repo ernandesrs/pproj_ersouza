@@ -14,11 +14,17 @@
         }
     }
 
-    .section-top {
-        .banner {
-            .banner-desc {
-                font-size: 1.25rem;
+    .header {
+        .nav {
+            &.mobile {
+                max-width: 50vw;
             }
+        }
+    }
+
+    .section-banner {
+        .banner-desc {
+            font-size: 1.25rem;
         }
     }
 }
@@ -30,16 +36,9 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .section-top {
-        .header {
-            .nav {
-                display: flex;
-            }
-        }
-
-        .banner {
-            min-height: calc(100vh - $header-height);
-            transform: translateY($header-height);
+    .header {
+        .nav {
+            display: flex;
         }
     }
 }

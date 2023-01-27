@@ -2,15 +2,12 @@
 
 use MatthiasMullie\Minify;
 
-$env = parse_ini_file(__DIR__ . "/../.env");
-
-define("CONF_APP_URL", $env["APP_URL"] ?? null);
-define("CONF_APP_ASSETS_URL", $env["APP_ASSETS_URL"] ?? null);
-
 $data = require __DIR__ . "/data.php";
 define("CONF_APP_DATA", $data ?? []);
 
-if (($env["APP_ENV"] ?? null) === "local") {
+require __DIR__ . "/functions.php";
+
+if (get_site_env() === "local") {
     copy_assets_from_source();
 }
 
