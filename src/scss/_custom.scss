@@ -361,3 +361,51 @@ a {
         }
     }
 }
+
+.cookie-alert {
+    width: 100%;
+    padding: $spacer * 1 0;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    transform: translateY(100%);
+
+    &.show {
+        transform: translateY(0);
+    }
+
+    &.show-cookie-alert {
+        animation: showCookieAlertAnimation .75s ease-in-out 1 both;
+
+        @keyframes showCookieAlertAnimation {
+            100% {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &.hide-cookie-alert {
+        animation: hideCookieAlertAnimation .25s ease-out 1 both;
+
+        @keyframes hideCookieAlertAnimation {
+            100% {
+                transform: translateY(100%);
+            }
+        }
+    }
+
+    .cookie-alert-inner {
+        display: flex;
+        justify-content: center;
+
+        .cookie-alert-alert {
+            background-color: rgb($dark, .98);
+            width: 100%;
+            max-width: 475px;
+            padding: $spacer $spacer * 1.5;
+            box-shadow: 0 0 0.875rem -0.275rem rgb($dark-dark, 0.75);
+        }
+    }
+}

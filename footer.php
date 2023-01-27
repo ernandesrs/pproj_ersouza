@@ -22,6 +22,25 @@
 </footer>
 <!-- /footer -->
 
+<!-- cookie alert -->
+<section class="cookie-alert">
+    <div class="container cookie-alert-inner">
+        <div class="cookie-alert-alert">
+            <h3 class="fs-5 fw-semibold">
+                Utilizamos cookie!
+            </h3>
+            <p>
+                Fazemos o uso de cookies neste site, ao navegar você concorda com o uso de
+                cookies de acordo com o
+                nosso <a href="<?= get_site_url("/privacy-terms.php") ?>"
+                    title="Termos de privacidade">termos de privacidade</a>.
+            </p>
+            <button class="btn btn-sm btn-outline-primary allow-cookie">Eu aceito os termos</button>
+        </div>
+    </div>
+</section>
+<!-- /cookie alert -->
+
 <script src="<?= get_site_asset_url("/js/scripts.js") ?>"></script>
 <script>
     AOS.init();

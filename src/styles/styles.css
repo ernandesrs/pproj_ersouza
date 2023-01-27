@@ -10889,6 +10889,47 @@ a:hover {
   transition: all 0.2s ease-in-out;
 }
 
+.cookie-alert {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 500;
+  transform: translateY(100%);
+}
+.cookie-alert.show {
+  transform: translateY(0);
+}
+.cookie-alert.show-cookie-alert {
+  animation: showCookieAlertAnimation 0.75s ease-in-out 1 both;
+}
+@keyframes showCookieAlertAnimation {
+  100% {
+    transform: translateY(0);
+  }
+}
+.cookie-alert.hide-cookie-alert {
+  animation: hideCookieAlertAnimation 0.25s ease-out 1 both;
+}
+@keyframes hideCookieAlertAnimation {
+  100% {
+    transform: translateY(100%);
+  }
+}
+.cookie-alert .cookie-alert-inner {
+  display: flex;
+  justify-content: center;
+}
+.cookie-alert .cookie-alert-inner .cookie-alert-alert {
+  background-color: rgba(56, 56, 56, 0.98);
+  width: 100%;
+  max-width: 475px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 0.875rem -0.275rem rgba(46, 45, 45, 0.75);
+}
+
 @media (min-width: 576px) {
   .section .section-title {
     font-size: 2.5rem;
